@@ -1,0 +1,229 @@
+@import './smart-grid';
+@import './mixins';
+
+@include reset();
+
+@font-face {
+    font-family: "Gilroy";
+    src: url(../fonts/Gilroy-Bold.eot) format("eot"),
+         url(../fonts/Gilroy-Bold.ttf) format("truetype"),
+         url(../fonts/Gilroy-Bold.woff) format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url(../fonts/Gilroy-Thin.eot) format("eot"),
+         url(../fonts/Gilroy-Thin.ttf) format("truetype"),
+         url(../fonts/Gilroy-Thin.woff) format("woff");
+    font-weight: thin;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url(../fonts/Gilroy-Regular.eot) format("eot"),
+         url(../fonts/Gilroy-Regular.ttf) format("truetype"),
+         url(../fonts/Gilroy-Regular.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+*:focus {
+    outline: none;
+}
+
+html.fonts-loaded body {
+    font-family: 'Gilroy', sans-serif;
+}
+
+body {
+    font-size: 16px;
+    font-display: swap;
+}
+
+.ps {
+    font-style: italic;
+    font-size: 14px;
+}
+
+.row-inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.page-title {
+    font-size: 45px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 30px;
+
+    @include sm-block {
+        font-size: 37px;
+        margin: 15px 0;
+    }
+
+    @include xs-block {
+        font-size: 27px;
+    }
+}
+
+.container {
+    @include wrapper();
+}
+
+.show-xs {
+    display: none !important;
+    @include xs(display, block !important);
+}
+
+.show-sm {
+    display: none !important;
+    @include sm(display, block !important);
+}
+
+.hide-sm {
+    @include sm-block {
+        display: none !important;
+    }
+}
+
+.hide-xs {
+    @include xs-block {
+        display: none !important;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.title-primary {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 30px 0;
+
+    @include sm-block {
+        font-size: 30px;
+        margin: 10px 0;
+    }
+
+    @include xs-block {
+        font-size: 24px;
+    }
+}
+
+.mt50 {
+    margin-top: 50px !important;
+}
+
+.mb30 {
+    margin-bottom: 30px !important;
+}
+
+.title-secondary {
+    font-size: 30px;
+    padding-left: 15px;
+    font-weight: normal;
+
+    @include sm-block {
+        font-size: 18px;
+    }
+
+    @include xs-block {
+        font-size: 15px;
+    }
+}
+
+.title-tertiary {
+    font-size: 35px;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 10px;
+
+    @include sm-block {
+        font-size: 20px;
+    }
+}
+
+.desc-primary {
+    text-align: center;
+    font-size: 16px;
+}
+
+#flex-around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.flex-evenly {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hr {
+    width: 300px;
+    height: 3px;
+    background-color: #333;
+    margin: 30px auto;
+}
+
+.row {
+    @include row-flex();
+}
+
+.text-center {
+    text-align: center;
+}
+
+.overhidden {
+    @include sm-block {
+        overflow: hidden;
+    }
+}
+
+button {
+    -webkit-appearance: none;
+}
+
+.btn-primary {
+    color: #0dace8;
+    font-size: 20px;
+    border: none;
+    padding: 10px 9px;
+    background-color: #fff;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: inline-block;
+    border: 2px solid #0dace8;
+    border-radius: 5px;
+
+    &:hover, &:focus {
+        outline: none;
+        color: #fff;
+        background-color: #0dace8;
+    }
+
+    @media only screen and (max-width: 576px) {
+        font-size: 16px;
+        line-height: 1;
+        letter-spacing: 0.5px;
+    }
+}
