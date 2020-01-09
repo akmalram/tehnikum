@@ -41,6 +41,7 @@ window.addEventListener('load', () => {
             closetBtn = document.querySelector(`${modalClass} .close-btn`),
             modalBackground = document.querySelector(`${modalClass} .modal-background`);
 
+       if(modal) {
         btn.forEach(one => {
             one.addEventListener('click', () => {
                 modal.classList.add('active');
@@ -52,6 +53,7 @@ window.addEventListener('load', () => {
                 modal.classList.remove('active');
             });
         });
+       }
     }
 
     modalToggler('.modal-smm-open-btn', '.register-smm-modal');
@@ -80,14 +82,4 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
 })
-
-const fontAwesomeFreeObserver = new FontFaceObserver('Font Awesome 5 Free');
-const gilroyObserver = new FontFaceObserver('Gilroy');
-
-Promise.all([
-    fontAwesomeFreeObserver.load(),
-    gilroyObserver.load()
-]).then(() => {
-    document.querySelector('html').classList.add('fonts-loaded');
-});
 
